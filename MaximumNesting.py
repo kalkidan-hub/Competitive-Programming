@@ -44,4 +44,4 @@ def maxNestingDepth(s: str) -> int:
             open -= 1 
         max_depth = max(max_depth,open)
     return max_depth
-print(maxNestingDepth("(1+(2*3)+((8)/4))+1"))
+# print(maxNestingDepth("(1+(2*3)+((8)/4))+1"))
