@@ -22,4 +22,4 @@ class Solution:
             
       
             i+=1
-        return len(stack)==0
+        return len(stack)==0   
