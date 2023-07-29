@@ -1,3 +1,5 @@
+from collections import List
+
 class Solution:
     def smallerNumbersThanCurrent(self, lst: List[int]) -> List[int]:
         counted=[]
@@ -8,4 +10,13 @@ class Solution:
                     ct+=1
             counted.append(ct)
         return counted
+    
+    def smallerNumbersThanCurrent2(self, nums: List[int]) -> List[int]:
+    
+        ans = []
+        refer = sorted(nums)
+        for i in nums:
+            ans.append(refer.index(i))
+        return ans
+        
         
