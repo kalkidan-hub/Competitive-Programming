@@ -6,3 +6,4 @@ class Solution:
                 n = n[:i] + '9' + n[i+1:]
                 break
         return int(n)
+   
