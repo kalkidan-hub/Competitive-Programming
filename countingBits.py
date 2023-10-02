@@ -10,7 +10,7 @@ def countBits(n):
     for i in range(n+1):
         ans.append(ones(i))
     
-    return ans
+    return ans 
 
 def countBits2(n):
     ans = []
