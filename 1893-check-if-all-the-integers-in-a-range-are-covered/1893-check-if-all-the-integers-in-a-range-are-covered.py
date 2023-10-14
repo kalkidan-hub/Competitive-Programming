@@ -1,21 +1,14 @@
 class Solution:
     def isCovered(self, ranges: List[List[int]], left: int, right: int) -> bool:
-        nums = []
+        _map = [0]*60
+        
         for i in ranges:
-            k = i[0]
-            while k <= i[1]:
-                nums.append(k)
-                k += 1
+            _map[i[0]] += 1
+            _map[i[1] + 1] -= 1
         
-        for i in range(left,right + 1):
-            if i not in nums:
-                return False
+        for k in range(1,len(_map)):
+            _map[k] += _map[k-1]
         
-        return True
+        if _map[left:right + 1]:
+            return min(_map[left:right + 1]) >= 1
         
-    
-                
-            
-        
-        
-        return 0
