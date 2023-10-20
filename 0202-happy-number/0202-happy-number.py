@@ -14,5 +14,3 @@ class Solution:
             for i in str(n):
                 new_n += int(i) ** 2
             n = new_n
-        # print(2**31 -1)
-        return False
