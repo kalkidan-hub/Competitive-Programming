@@ -6,22 +6,10 @@
 #         self.right = right
 class Solution:
     def binaryTreePaths(self, root: Optional[TreeNode]) -> List[str]:
-        res = []
-        def travel(root,store):
-            # print(root)
-            if not root:
-                return
-            if not root.right and not root.left:
-                store.append(root.val)
-                res.append("->".join([str(i) for i in store]))
-                return
-           
-            store.append(root.val)
-            store_right = store.copy()
-            travel(root.left,store)
-            travel(root.right,store_right)
-            
-        
-        travel(root,[])
-        return res
+        # print([str(2)  + i for i in []]) --> [] that's why we have the second base case.
+        if not root:
+            return []
+        if not root.right and not root.left:
+            return [str(root.val)]
+        return [str(root.val) + '->' + i for i in self.binaryTreePaths(root.right)] + [str(root.val) + '->' + j for j in self.binaryTreePaths(root.left)]
             
