@@ -11,10 +11,9 @@
 #         self.right = right
 class Solution:
     def isSubPath(self, head: Optional[ListNode], root: Optional[TreeNode]) -> bool:
-        DELIMITER = '|'
         head_str = ""
         while head:
-            head_str += str(head.val) + DELIMITER
+            head_str += str(head.val)
             head = head.next
         
         
@@ -24,6 +23,6 @@ class Solution:
             if not root:
                 return False
             
-            return dfs(root.right,path+str(root.val) + DELIMITER) or dfs(root.left,path+str(root.val) + DELIMITER)
+            return dfs(root.right,path+str(root.val)) or dfs(root.left,path+str(root.val))
         
         return dfs(root,"")
